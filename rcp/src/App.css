@@ -1,0 +1,25 @@
+.box {
+  border : 2px solid black;
+  width : 500px
+}
+
+.box_win {
+  border : 2px solid green;
+  width : 500px
+}
+
+.box_lose {
+  border : 2px solid red;
+  width : 500px
+}
+
+.img_item {
+  width : 400px;
+  height : 400px;
+}
+
+.main {
+  display : flex;
+  justify-content: center; 
+  align-items: center;
+}
