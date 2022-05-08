@@ -8,7 +8,24 @@ function App() {
   const [blockNum, setBlockNum] = useState(data)
   console.log(data)
 
+  const randomArray = [] 
 
+  const randomNumber = () => {
+
+    for( let i=0; i<5; i++) {
+      let number = Math.floor(Math.random() * 25)
+      randomArray.push(number)
+      //console.log(number)
+    }
+    //console.log(randomArray)
+    return randomArray
+  }    
+
+  randomNumber()
+  console.log(randomArray)
+
+  const [random, setRandom] = useState(randomArray)
+  console.log(random)
 
   return (
     <>
@@ -17,7 +34,7 @@ function App() {
       {
         blockNum.map( (a, i) => {
           return(
-            <Block blockNum={blockNum[i]} />
+            <Block blockNum={blockNum[i]} random={random} />
           )
         })
       }

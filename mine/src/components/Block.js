@@ -6,12 +6,31 @@ const Block = (props) => {
 
     const click = () => {
         console.log("click")
-        setBoxColor("boxClick")    
+        setBoxColor("boxClick")
+        //randomNumber()   
     }
- 
+
+    const test = () => {
+        for (let i=0; i<5; i++) {
+            if(props.blockNum.id === props.random[i]) {
+                return "mine"
+            }
+            else {
+                return ""
+            }
+        }
+    }
+
+    test()
+    console.log(test())
+    const [mine, setMine] = useState("")
+
     return (
     <>
-        <div className={boxColor} onClick={ () => click()} >{props.blockNum.id}</div>
+        <div className={boxColor} onClick={ () => click()} >
+            {props.blockNum.id}
+            <div className="mine"></div>
+        </div>
     </>
     )
 }
