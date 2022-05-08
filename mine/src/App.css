@@ -1,0 +1,32 @@
+.gridBox {
+
+  width: 250px;
+  height: 250px;
+
+	/* Activate grid layout */
+	display: grid;
+
+	/* Create 5 columns, each 1 "fractional unit" wide */
+	grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+
+	/* Create 5 rows, each 1 "fractional unit" high */
+	grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+
+	/* Add a 10px gap between columns and rows */
+	/* grid-gap: 10px; */
+
+}
+
+.box {
+	background-color: rgba(43, 42, 42, 0.5);
+	border: 1px solid rgba(128, 128, 128, 0.5);
+	width: 50px;
+  height: 50px;
+}
+
+.boxClick {
+	background-color: rgba(229, 229, 229, 0.5);
+	border: 1px solid rgba(128, 128, 128, 0.5);
+	width: 50px;
+  height: 50px;
+}
