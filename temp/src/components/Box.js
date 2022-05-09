@@ -8,6 +8,8 @@ const Box = (props) => {
         <p>{props.name}</p> 
         {/* props도 객체기 떄문에 .name이란 key값에 value값을 가져온다 */}
     </div>
+
+    
   )
 }
 

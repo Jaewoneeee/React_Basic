@@ -34,6 +34,8 @@ function App() {
   const [computerResult, setComputerResult] = useState("")
   const [userBoxColor, setuserBoxColor] = useState("")
   const [computerBoxColor, setcomputerBoxColor] = useState("")
+  const [tryNum, setTryNum] = useState(10)
+  const [winNum, setWinNum] = useState(0)
 
   const play = (userChoice) => {
     console.log("선택됨", userChoice)
@@ -47,6 +49,12 @@ function App() {
 
     setuserBoxColor(judgementUserBoxColor(choice[userChoice],computerChoice))
     setcomputerBoxColor(judgementComputerBoxColor(choice[userChoice],computerChoice))
+
+    setTryNum(tryNum - 1)
+
+    if(userResult === "Win!"){
+      setWinNum(winNum +1)
+    }
   }
 
   const randomChoice = () => {
@@ -109,11 +117,17 @@ function App() {
     else if(user.name === "Scissors") return computer.name === "Paper" ? "box_lose" : "box_win";
     else if(user.name === "Paper") return computer.name === "Rock" ? "box_lose" : "box_win";
   }
-  
 
+  // 교수님코드. 확실히 간결하구만.
+  const computerJudge = (result) => {
+    return result === "win" ? "lose" : result === "tie" ? "tie" : "win";
+  }
+  
+  
   return (
     <>
       <div className="main"> 
+        
         <Box title='you' item={userSelect} result={userResult} boxColor={userBoxColor}/>
         <Box title='computer' item={computerSelect} result={computerResult} boxColor={computerBoxColor}/>
       </div>
@@ -123,6 +137,8 @@ function App() {
         <button onClick={()=>play("Paper")}>보</button>
         {/* 랜더링이 되면서 함수가 바로 호출되기때문에 콜백함수고 비동기 처리를 해줘야한다 */}
       </div>
+      <div> 남은횟수 : {tryNum}</div>
+      <div> 이긴횟수 : {winNum}</div>
     </>
   );
 }
