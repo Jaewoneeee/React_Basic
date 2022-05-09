@@ -7,6 +7,7 @@ export default class BoxClass extends Component {
     render() {
         return (
         <div>
+            {/* 여기서도 class를 사용하려면 this! */}
             Box{this.props.num}
         </div>
         )

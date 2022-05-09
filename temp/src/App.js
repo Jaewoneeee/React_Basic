@@ -1,6 +1,6 @@
 import './App.css';
 import Box from './components/Box'
-import {useState} from 'react'
+import {useState, useEffect} from 'react'
 
 function App() {
 
@@ -33,8 +33,17 @@ function App() {
   // let counter = 0 을 거치면서 counter값은 다시 0으로 초기화가된다. 
   // state값은 update가되면서 다시 완료
 
+  useEffect( () => {
+    console.log('useEffect1 fire')
+  }, [])
+
+  useEffect( () => {
+    console.log('useEffect2 fire' , counter2)
+  }, [counter2])
+
   return (
     <div>
+      {console.log("render")}
       <Box name='리사' num={1}/> 
       {/* 얘가 객체다. 여기서 이거저거 설정을하고 할일을 하게끔 만드는것*/}
       <Box name='제니' num={2}/>
