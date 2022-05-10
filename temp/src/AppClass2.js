@@ -3,7 +3,7 @@ import BoxClass from './components/BoxClass';
 
 export default class AppClass2 extends Component {
     // 생성자 : 클래스를 생성할떄 호출하는 함수
-    // 생성자 안에서 props를 쓰려고 props를 가져옴
+    // 생성자 안에서 props를 쓰려고 props를 가져옴 (super를 해줘야함
 
     // functinon 에서는 state를 하나하나 따로 만들었다면
     // class에서는 state라는 객체를 하나 만들고 그 안에 내가 원하는 state를 다 넣으면됨
