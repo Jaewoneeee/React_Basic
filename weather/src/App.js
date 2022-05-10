@@ -11,7 +11,7 @@ import ClipLoader from "react-spinners/ClipLoader";
 // 4. 도시버튼을 클릭할때 마다 도시별 날씨가 나온다.
 // 5. 현재위치 버튼을 누르면 다시 현재위치 기반의 날씨가 나온다.
 // 6. 데이터를 들고오는 동안 로딩 스피너가 돈다.
- 
+
 function App() {
 
   const [weather, setWeather] = useState(null);
