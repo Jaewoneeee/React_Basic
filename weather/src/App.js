@@ -66,7 +66,7 @@ function App() {
   return (
     <div className='container'>
       <WeatherBox weather={weather} />
-      <WeatherButton cities={cities} setCity={setCity} />
+      <WeatherButton cities={cities} setCity={setCity} current={getCurrentLocation} />
       {/* <ClipLoader size={50} /> */}
     </div>
   );
