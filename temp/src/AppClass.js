@@ -4,7 +4,7 @@ import BoxClass from './components/BoxClass.js';
 export default class AppClass extends Component {
 
     // 생성자 : 클래스를 생성할떄 호출하는 함수
-    // 생성자 안에서 props를 쓰려고 props를 가져옴
+    // 생성자 안에서 props를 쓰려고 props를 가져옴 (super를 해줘야함)
     constructor(props) {
         super(props)
         this.state = {

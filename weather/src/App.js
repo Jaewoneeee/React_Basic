@@ -3,7 +3,7 @@ import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import WeatherBox from './components/WeatherBox.js';
 import WeatherButton from './components/WeatherButton.js';
-import ClipLoader from "react-spinners/ClipLoader";
+//import ClipLoader from "react-spinners/ClipLoader";
 
 // 1. 앱이 실행되자마자 현재위치 기반의 날씨가 보인다.
 // 2. 날씨정보에는 도시, 섭씨, 화씨, 날씨상태
