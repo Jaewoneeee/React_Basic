@@ -19,6 +19,14 @@ function App() {
   const [loading, setLoading] = useState(true)
   const cities = ['paris', 'london', 'tokyo']
 
+  const handleCityChange = (city) => {
+    if (city === "current") {
+      setCity('');
+    } else {
+      setCity(city);
+    }
+  };
+
   const getCurrentLocation = () => {
     // 현재위치 가져오는 코드
     navigator.geolocation.getCurrentPosition((position)=>{
@@ -53,7 +61,7 @@ function App() {
 
   // 상황에 맞춰서 호출을 달리해주자
   useEffect(()=> {
-    if(city == ""){
+    if(city == ''){
       getCurrentLocation();
     } else {
       getWeatherByCity(city)
@@ -77,7 +85,7 @@ function App() {
       :
         <div className='container'>
           <WeatherBox weather={weather} />
-          <WeatherButton cities={cities} setCity={setCity} current={getCurrentLocation} city={city}/>
+          <WeatherButton cities={cities} setCity={setCity} current={getCurrentLocation} selectedCity={city} handleCityChange={handleCityChange} />
         </div>
       }
     </div>
