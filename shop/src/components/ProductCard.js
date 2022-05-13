@@ -1,22 +1,22 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
 
-const ProductCard = () => {
+
+const ProductCard = ( {item} ) => {
+
+  const navigate = useNavigate();
+
+  const showDetail = () => {
+    navigate(`/product/${item.id}`)
+  }
+
   return (
-    <div>
-        <img src='https://lp2.hm.com/hmgoepprod?set=source[/c1/ff/c1ff7aa6ebd2f364c9caa3af350ff3f45068b28c.jpg],origin[dam],category[ladies_jeans_loose],type[DESCRIPTIVESTILLLIFE],res[y],hmver[2]&call=url[file:/product/main]' />
-        <div>정보</div>
-        <div>상품명ㅇㅇ</div>
-        <div>23123</div>
-        <div>신제품</div>
-
-        {/* <Container>
-            <Row>
-                <Col lg={3}>1</Col>
-                <Col lg={3}>2</Col>
-                <Col lg={3}>3</Col>
-                <Col lg={3}>4</Col>
-            </Row>
-        </Container> */}
+    <div className='card' onClick={showDetail}>
+        <img src={item?.img} />
+        <div>{item.choice == true ? "할인중" : "" }</div>
+        <div>{item?.title}</div>
+        <div>{item?.price}</div>
+        <div>{item.new == true ? "신제품" : ""}</div>
     </div>
   )
 }
